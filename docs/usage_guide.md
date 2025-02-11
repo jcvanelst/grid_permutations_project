@@ -29,10 +29,10 @@ python src/audio_reactive_generator.py images/ output.mp4 music.mp3
 ### Examples
 1. Beat-synced video:
    ```bash
-   python src/audio_reactive_generator.py example/images/ output.mp4 example/audio/sound.m4a --sync-mode beat
+   python src/audio_reactive_generator.py examples/images/ output.mp4 example/audio/sound.m4a --sync-mode beat
    ```
 
 2. High-quality output:
    ```bash
-   python src/audio_reactive_generator.py example/images/ output.mp4 example/audio/sound.m4a --fps 60
+   python src/audio_reactive_generator.py examples/images/ output.mp4 example/audio/sound.m4a --fps 60
    ```
