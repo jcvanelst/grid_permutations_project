@@ -36,3 +36,7 @@ python src/audio_reactive_generator.py images/ output.mp4 music.mp3
    ```bash
    python src/audio_reactive_generator.py examples/images/ output.mp4 example/audio/sound.m4a --fps 60
    ```
+
+3. Panels of 3 by three images:
+   ```bash
+   python src/audio_reactive_panels.py examples/images/ output.mp4 example/audio/sound.m4a --sync-mode beat
