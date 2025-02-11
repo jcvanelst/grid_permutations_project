@@ -1,0 +1,113 @@
+grid_permutations_project/
+│
+├── README.md                     # Project documentation
+├── requirements.txt              # Python dependencies
+├── setup/
+│   ├── setup_python_env.sh       # Environment setup script
+│   └── test_setup.py            # Installation verification script
+│
+├── src/
+│   ├── grid_generator.py         # Basic grid permutation generator
+│   └── audio_reactive_generator.py  # Enhanced audio-reactive version
+│
+├── examples/                     # Example inputs and outputs
+│   ├── audio/
+│   │   └── example_music.mp3     # Sample audio file
+│   └── images/
+│       └── output/               # Generated permutation images
+│
+└── docs/
+    ├── setup_guide.md           # Detailed setup instructions
+    └── usage_guide.md           # How to use the generators
+
+# Contents of README.md:
+# Grid Permutations Video Generator
+
+This project generates visual permutations of a 3x3 grid and can create videos synchronized with audio.
+
+## Setup
+
+1. Clone this repository
+2. Run the setup script:
+   ```bash
+   cd setup
+   chmod +x setup_python_env.sh
+   ./setup_python_env.sh
+   ```
+
+3. Activate the virtual environment:
+   ```bash
+   source venv/bin/activate
+   ```
+
+## Usage
+
+1. Generate grid permutations:
+   ```bash
+   python src/grid_generator.py input_images/ output/
+   ```
+
+2. Create audio-reactive video:
+   ```bash
+   python src/audio_reactive_generator.py output/ final_video.mp4 music.mp3
+   ```
+
+See docs/usage_guide.md for detailed instructions and options.
+
+# Contents of docs/setup_guide.md:
+# Setup Guide
+
+## Prerequisites
+- MacBook Pro (2017 or later)
+- macOS 10.15 or later
+- Terminal access
+
+## Installation Steps
+1. Open Terminal
+2. Navigate to the project directory
+3. Run setup script (see setup/setup_python_env.sh)
+4. Verify installation with test_setup.py
+
+## Common Issues and Solutions
+- If you encounter permission issues, use: sudo chmod +x setup_python_env.sh
+- For library issues, try: brew install ffmpeg portaudio
+
+# Contents of docs/usage_guide.md:
+# Usage Guide
+
+## Grid Generator
+The grid generator creates permutations of your images in a 3x3 grid.
+
+### Basic Usage
+```bash
+python src/grid_generator.py input_images/ output/
+```
+
+### Options
+- --num_permutations: Limit number of permutations
+- --margin: Set margin size (default: 7%)
+- --image_size: Set output image size
+
+## Audio-Reactive Generator
+Creates videos synchronized with music.
+
+### Basic Usage
+```bash
+python src/audio_reactive_generator.py images/ output.mp4 music.mp3
+```
+
+### Sync Modes
+- beat: Sync with music beats
+- intensity: Sync with audio intensity
+- segment: Sync with song structure
+
+### Examples
+1. Beat-synced video:
+   ```bash
+   python src/audio_reactive_generator.py images/ output.mp4 music.mp3 --sync-mode beat
+   ```
+
+2. High-quality output:
+   ```bash
+   python src/audio_reactive_generator.py images/ output.mp4 music.mp3 --fps 60
+   ```
