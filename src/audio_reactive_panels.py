@@ -33,6 +33,7 @@ class AudioReactivePanelGenerator:
         
         # Extract audio features
         self.tempo, self.beats = librosa.beat.beat_track(y=self.y, sr=self.sr)
+        self.tempo = float(self.tempo)  # Convert to scalar float
         self.beat_times = librosa.frames_to_time(self.beats)
         self.onset_env = librosa.onset.onset_strength(y=self.y, sr=self.sr)
         
